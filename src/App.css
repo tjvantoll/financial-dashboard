@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1 {
+  font-family: Ubuntu;
+  background: url("/header.svg") no-repeat;
+  background-size: cover;
   color: white;
+  margin: 0;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+h1 img {
+  align-self: flex-end;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+h1 span {
+  align-self: center;
+}
+.title {
+  margin: 0 15px;
+}
+.title span {
+  display: inline-block;
+  padding-left: 10px;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+.k-button {
+  align-self: center;
+}
+.k-icon.k-i-menu {
+  font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 700px) {
+  h1 {
+    padding: 1rem;
+    font-size: 2rem;
+  }
+  .k-icon.k-i-menu {
+    font-size: 20px;
+  }
+  h1 img {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  .title span {
+    font-size: 1rem;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.k-drawer-item .k-item-text {
+  align-self: center;
+}
+.k-drawer-item span.k-icon {
+  font-size: 30px;
+}
+
+.page-container {
+  margin: 1rem;
+}
+
+.panels {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 225px auto auto;
+  grid-template-rows: auto auto;
+}
+.panel-fundinfo {
+  grid-row: span 2;
+}
+.panel-allocation {
+
+}
+.panel-balance {
+
+}
+.panel-positions {
+  grid-column: span 2;
+}
+.panels > div {
+  /* border: 1px solid black; */
+}
+
+.k-panelbar > .k-item > .k-link.k-state-selected,
+.k-panelbar .k-group > .k-item > .k-link.k-state-selected {
+  color: inherit;
+}
+.manager h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  padding-top: 15px;
+  margin: 0;
+}
+.manager p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+.manager img {
+  display: inline-block;
+  vertical-align: top;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 50%;
+}
+.manager-info {
+  display: inline-block;
+}
+.fund-detail-list span {
+  display: block;
+}
+.fund-detail-list span:first-child {
+  font-weight: bold;
+}
+.fund-detail-list span:last-child {
+  margin-bottom: 0.2rem;
 }
