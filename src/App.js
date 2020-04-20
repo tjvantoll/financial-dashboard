@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "hammerjs";
 
 import DrawerContainer from "./layout/DrawerContainer";
@@ -10,17 +9,11 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <DrawerContainer>
-        <div className="page-container">
-          <Switch>
-            <Route exact path="/">
-              <Dashboard />
-            </Route>
-          </Switch>
-        </div>
-      </DrawerContainer>
-    </Router>
+    <DrawerContainer>
+      <div className="page-container">
+        <Dashboard />
+      </div>
+    </DrawerContainer>
   );
 }
 

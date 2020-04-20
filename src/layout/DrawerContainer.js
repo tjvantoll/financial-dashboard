@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 
 import { Button } from "@progress/kendo-react-buttons";
 import { Drawer, DrawerContent } from "@progress/kendo-react-layout";
@@ -18,66 +17,51 @@ const items = [
   { text: "Financial Fund", icon: 'k-i-dollar', route: '/' },
 ];
 
-class DrawerContainer extends React.Component {
-  state = {
-    expanded: false,
-    selectedId: items.findIndex(x => x.selected === true)
+export default function DrawerContainer(props) {
+  const [expanded, setExpanded] = React.useState(false);
+  const [selectedId, setSelectedId] = React.useState(0);
+
+  const onSelect = (e) => {
+    setSelectedId(e.itemIndex);
+    setExpanded(false);
+  }
+  const closeDrawer = () => {
+    setExpanded(false);
+  }
+  const toggleDrawer = () => {
+    setExpanded(currentExpanded => {
+      return !currentExpanded;
+    });
   }
 
-  handleClick = () => {
-    this.setState((e) => ({ expanded: !e.expanded }));
-  }
-
-  closeDrawer = () => {
-    this.setState({ expanded: false });
-  }
-
-  onSelect = (e) => {
-    this.setState({ selectedId: e.itemIndex });
-    this.setState({ expanded: false });
-    this.props.history.push(e.itemTarget.props.route);
-  }
-
-  setSelectedItem = (pathName) => {
-    let currentPath = items.find(item => item.route === pathName);
-    if (currentPath.text) {
-      return currentPath.text;
-    }
-  }
-
-  render() {
-    let selected = this.setSelectedItem(this.props.location.pathname);
-    return (
-      <div>
-        <Drawer
-          expanded={this.state.expanded}
-          items={items.map(
-            (item) => ({ ...item, selected: item.text === selected }))}
-          onSelect={this.onSelect}
-          animation={{ duration: 400 }}
-          position="start"
-          onOverlayClick={this.closeDrawer}
-        >
-          <DrawerContent>
-            <div className="header">
-              <h1>
-                <span>
-                  <Button icon="menu" look="flat" onClick={this.handleClick} />
-                  <span className="title">
-                    ACME Stocks
-                    <span className="divider">|</span>
-                    <span className="fund">Tech Fund</span>
-                  </span>
+  return (
+    <div>
+      <Drawer
+        expanded={expanded}
+        items={items.map(
+          (item) => ({ ...item, selected: items[selectedId].text === item.text }))}
+        onSelect={onSelect}
+        animation={{ duration: 400 }}
+        position="start"
+        onOverlayClick={closeDrawer}
+      >
+        <DrawerContent>
+          <div className="header">
+            <h1>
+              <span>
+                <Button icon="menu" look="flat" onClick={toggleDrawer} />
+                <span className="title">
+                  ACME Stocks
+                  <span className="divider">|</span>
+                  <span className="fund">Tech Fund</span>
                 </span>
-                <img alt={user.name} src={user.img} />
-              </h1>
-            </div>
-            {this.props.children}
-          </DrawerContent>
-        </Drawer>
-      </div>
-    );
-  }
-};
-
-export default withRouter(DrawerContainer);
+              </span>
+              <img alt={user.name} src={user.img} />
+            </h1>
+          </div>
+          {props.children}
+        </DrawerContent>
+      </Drawer>
+    </div>
+  );
+}
