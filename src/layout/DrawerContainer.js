@@ -11,11 +11,11 @@ const user = {
 };
 
 const items = [
-  { text: "Home", icon: "k-i-globe-outline", route: "/" },
-  { text: "Calendar", icon: "k-i-calendar", route: "/calendar" },
-  { text: "Products", icon: 'k-i-cart', route: '/products' },
-  { text: "Sign Up", icon: 'k-i-plus-outline', route: '/forms' },
-  { text: "Our Team", icon: 'k-i-user', route: '/team' },
+  { text: "Tech Fund", icon: "k-i-globe", route: "/" },
+  { text: "Health Fund", icon: "k-i-heart", route: "/" },
+  { text: "Commercial Fund", icon: 'k-i-cart', route: '/' },
+  { text: "Industrial Fund", icon: 'k-i-gear', route: '/' },
+  { text: "Financial Fund", icon: 'k-i-dollar', route: '/' },
 ];
 
 class DrawerContainer extends React.Component {

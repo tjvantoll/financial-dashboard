@@ -1,14 +1,21 @@
 import React from "react";
 import { PanelBar, PanelBarItem } from "@progress/kendo-react-layout";
 
-import { fundData } from "../data/fund";
+import { getFundInfo } from "../services/dataService";
 
 export default function Team() {
+  const [fundInfo, setFundInfo] = React.useState({});
+  React.useEffect(() => {
+    getFundInfo().then((data) => {
+      setFundInfo(data);
+    });
+  }, []);
+
   return (
     <PanelBar >
       <PanelBarItem expanded={true} title="Fund Managers">
         <div>
-          {fundData.managers.map((item, idx) => (
+          {fundInfo.managers && fundInfo.managers.map((item, idx) => (
             <div className="manager" key={idx}>
               <img src={`/team/${item.firstName}${item.lastName}.png`}
               alt={item.firstName + ' ' + item.lastName} />
@@ -21,7 +28,7 @@ export default function Team() {
         </div>
       </PanelBarItem>
       <PanelBarItem title={"Fund Details"}>
-        {fundData.quarters.map((quarter, idx) => (
+        {fundInfo.quarters && fundInfo.quarters.map((quarter, idx) => (
           <PanelBarItem title={quarter.title} key={idx}>
               <ul className="fund-detail-list">
                 {quarter.details.map((detail, index) => (

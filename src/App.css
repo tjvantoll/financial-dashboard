@@ -97,14 +97,14 @@ h1 span {
   color: inherit;
 }
 .manager h2 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: normal;
   padding-top: 15px;
   margin: 0;
 }
 .manager p {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .manager img {
   display: inline-block;
@@ -125,4 +125,11 @@ h1 span {
 }
 .fund-detail-list span:last-child {
   margin-bottom: 0.2rem;
+}
+
+.change-up {
+  color: green;
+}
+.change-down {
+  color: red;
 }

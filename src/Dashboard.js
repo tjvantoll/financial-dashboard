@@ -2,7 +2,7 @@ import React from "react";
 
 import FundInfo from "./panels/FundInfo";
 import Allocation from "./panels/Allocation";
-import Balance from "./panels/Balance";
+import Performance from "./panels/Performance";
 import Positions from "./panels/Positions";
 
 export default function Dashboard() {
@@ -15,7 +15,7 @@ export default function Dashboard() {
         <Allocation />
       </div>
       <div className="panel-balance">
-        <Balance />
+        <Performance />
       </div>
       <div className="panel-positions">
         <Positions />

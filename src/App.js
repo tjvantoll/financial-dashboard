@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "hammerjs";
 
 import DrawerContainer from "./layout/DrawerContainer";
 import Dashboard from "./Dashboard";

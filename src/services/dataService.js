@@ -1,4 +1,38 @@
+import { info } from "../data/info";
+import { allocation } from "../data/allocation";
+import { performance } from "../data/performance";
+import { positions } from "../data/positions";
+
+const DELAY_MS = 0;
+
+export function getFundInfo() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(info);
+    }, DELAY_MS);
+  })
+}
+
+export function getFundAllocation() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(allocation);
+    }, DELAY_MS);
+  });
+}
+
+export function getPerformance() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(performance);
+    }, DELAY_MS);
+  })
+}
+
 export function getPositions() {
-  return fetch("https://telerik.github.io/kendo-react-finance-portfolio/data/tech-symbols.json")
-    .then(response => response.json());
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(positions);
+    }, DELAY_MS);
+  });
 }

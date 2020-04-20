@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Chart,
   ChartLegend,
@@ -10,12 +9,7 @@ import {
   ChartTooltip
 } from "@progress/kendo-react-charts";
 
-const data = [
-  { category: "Domestic", value: 48.5 },
-  { category: "International", value: 14.4 },
-  { category: "Bonds", value: 17.0 },
-  { category: "Cash", value: 20.1 },
-]
+import { getFundAllocation } from "../services/dataService";
 
 const labelContent = (e) => (`${e.value}%`);
 
@@ -24,6 +18,13 @@ const renderTooltip = (e) => {
 };
 
 export default function Allocation() {
+  const [data, setData] = React.useState({});
+  React.useEffect(() => {
+    getFundAllocation().then((data) => {
+      setData(data);
+    })
+  }, []);
+
   return (
     <Chart>
       <ChartTitle text={"Asset Allocation"}></ChartTitle>

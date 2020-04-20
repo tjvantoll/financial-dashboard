@@ -1,4 +1,4 @@
-export const fundData = {
+export const info = {
   "managers": [
     {
       firstName: "Nora",
