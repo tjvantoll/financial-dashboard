@@ -2,15 +2,7 @@
 
 This is a demo application built for the [Let’s Build a Financial Dashboard with React](https://www.telerik.com/webinars/kendo-ui/financial-dashboard-with-react) webinar.
 
-> **TODO**: Add an image of the final app here.
-
-## Webinar resources
-
-> **TODO**: Add a link to the slides.
-
-* [Slides]()
-* [KendoReact Stock Watchlist app (live)](https://telerik.github.io/kendo-react-finance-portfolio/)
-* [KendoReact Stock Watchlist app (source code)](https://github.com/telerik/kendo-react-finance-portfolio)
+![](/resources/app.png)
 
 ## Running the demo
 
@@ -33,3 +25,10 @@ And then run `npm run start`, and visit `localhost:3000` in your browser to see 
 npm run start
 ```
 
+## Webinar resources
+
+> **TODO**: Add a link to the slides.
+
+* [Slides]()
+* [KendoReact Stock Watchlist app (live)](https://telerik.github.io/kendo-react-finance-portfolio/)
+* [KendoReact Stock Watchlist app (source code)](https://github.com/telerik/kendo-react-finance-portfolio)

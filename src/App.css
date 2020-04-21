@@ -92,6 +92,26 @@ h1 span {
   /* border: 1px solid black; */
 }
 
+@media (max-width: 750px) {
+  .panels {
+    grid-template-columns: 225px auto;
+    grid-template-rows: auto auto auto;
+  }
+  .panel-positions {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .panels {
+    grid-template-columns: auto;
+  }
+  .panel-positions {
+    grid-column: span 1;
+  }
+}
+
+
 .k-panelbar > .k-item > .k-link.k-state-selected,
 .k-panelbar .k-group > .k-item > .k-link.k-state-selected {
   color: inherit;
