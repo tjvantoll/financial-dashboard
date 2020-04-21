@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, GridColumn } from "@progress/kendo-react-grid";
 
 import { getPositions } from "../services/dataService";
+import Loading from "../layout/Loading";
 
 const NumberCell = (props) => {
   const startingValue = props.dataItem[props.field];
@@ -27,7 +28,7 @@ const ChangeCell = (props) => {
 }
 
 export default function Positions() {
-  const [positions, setPositions] = React.useState([]);
+  const [positions, setPositions] = React.useState();
 
   React.useEffect(() => {
     getPositions().then((data) => {
@@ -36,16 +37,19 @@ export default function Positions() {
   }, []);
 
   return (
-    <Grid
-      data={positions}
-      style={{ height: 700 }}
-    >
-      <GridColumn title="Symbol" field="symbol" locked={true} width={100} />
-      <GridColumn title="Name" field="name" />
-      <GridColumn title="Change" field="day_change" cell={ChangeCell} />
-      <GridColumn title="% Change" field="change_pct" cell={ChangeCell} />
-      <GridColumn title="Volume" field="volume" cell={NumberCell} />
-      <GridColumn title="Market Cap" field="market_cap" cell={NumberCell} />
-    </Grid>
+    <>
+      {!positions && <Loading />}
+      <Grid
+        data={positions}
+        style={{ height: 700, display: positions ? "block" : "none" }}
+      >
+        <GridColumn title="Symbol" field="symbol" locked={true} width={100} />
+        <GridColumn title="Name" field="name" />
+        <GridColumn title="Change" field="day_change" cell={ChangeCell} />
+        <GridColumn title="% Change" field="change_pct" cell={ChangeCell} />
+        <GridColumn title="Volume" field="volume" cell={NumberCell} />
+        <GridColumn title="Market Cap" field="market_cap" cell={NumberCell} />
+      </Grid>
+    </>
   )
 }

@@ -10,6 +10,7 @@ import {
 } from "@progress/kendo-react-charts";
 
 import { getFundAllocation } from "../services/dataService";
+import Loading from "../layout/Loading";
 
 const labelContent = (e) => (`${e.value}%`);
 
@@ -18,7 +19,7 @@ const renderTooltip = (e) => {
 };
 
 export default function Allocation() {
-  const [data, setData] = React.useState({});
+  const [data, setData] = React.useState();
   React.useEffect(() => {
     getFundAllocation().then((data) => {
       setData(data);
@@ -26,15 +27,18 @@ export default function Allocation() {
   }, []);
 
   return (
-    <Chart>
-      <ChartTitle text={"Asset Allocation"}></ChartTitle>
-      <ChartSeries>
-        <ChartSeriesItem type="donut" data={data}>
-          <ChartSeriesLabels content={labelContent} background="none" color="#fff" />
-        </ChartSeriesItem>
-      </ChartSeries>
-      <ChartLegend position={"bottom"} visible={true} />
-      <ChartTooltip render={renderTooltip} />
-    </Chart>
+    <>
+      {!data && <Loading />}
+      <Chart style={{ visibility: data ? "visible" : "hidden" }}>
+        <ChartTitle text={"Asset Allocation"}></ChartTitle>
+        <ChartSeries>
+          <ChartSeriesItem type="donut" data={data}>
+            <ChartSeriesLabels content={labelContent} background="none" color="#fff" />
+          </ChartSeriesItem>
+        </ChartSeries>
+        <ChartLegend position={"bottom"} visible={true} />
+        <ChartTooltip render={renderTooltip} />
+      </Chart>
+    </>
   )
 }
