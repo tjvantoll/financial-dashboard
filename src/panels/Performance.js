@@ -32,7 +32,7 @@ export default function Performance() {
   return (
     <>
       {!data && <Loading />}
-      <Chart style={{ visibility: data ? "visible" : "hidden" }}>
+      <Chart style={{ opacity: data ? "1" : "0" }}>
         <ChartTitle text="Fund Performance" />
         <ChartCategoryAxis>
           <ChartCategoryAxisItem categories={["2014", "2015", "2016", "2017", "2018", "2019", "2020"]} />

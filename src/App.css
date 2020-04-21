@@ -154,6 +154,10 @@ h1 span {
   color: red;
 }
 
+.panels > * > * {
+  transition: opacity 0.5s ease-in;
+}
+
 .k-icon.k-i-loading {
   font-size: 50px;
   display: inline-block;
@@ -162,6 +166,3 @@ h1 span {
   height: 100%;
 }
 
-.panel-info .k-icon.k-icon.k-i-loading {
-  height: 50%;
-}

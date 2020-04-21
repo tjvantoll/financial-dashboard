@@ -29,7 +29,7 @@ export default function Allocation() {
   return (
     <>
       {!data && <Loading />}
-      <Chart style={{ visibility: data ? "visible" : "hidden" }}>
+      <Chart style={{ opacity: data ? "1" : "0" }}>
         <ChartTitle text={"Asset Allocation"}></ChartTitle>
         <ChartSeries>
           <ChartSeriesItem type="donut" data={data}>

@@ -41,7 +41,7 @@ export default function Positions() {
       {!positions && <Loading />}
       <Grid
         data={positions}
-        style={{ height: 700, display: positions ? "block" : "none" }}
+        style={{ height: 700, opacity: positions ? "1" : "0" }}
       >
         <GridColumn title="Symbol" field="symbol" locked={true} width={100} />
         <GridColumn title="Name" field="name" />
