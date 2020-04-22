@@ -1,24 +1,24 @@
 import React from "react";
 
-import Info from "./panels/Info";
-import Allocation from "./panels/Allocation";
-import Performance from "./panels/Performance";
-import Positions from "./panels/Positions";
+import InfoPanel from "./panels/InfoPanel";
+import AllocationPanel from "./panels/AllocationPanel";
+import PerformancePanel from "./panels/PerformancePanel";
+import PositionsPanel from "./panels/PositionsPanel";
 
 export default function Dashboard() {
   return (
     <div className="panels">
       <div className="panel-info">
-        <Info />
+        <InfoPanel />
       </div>
       <div className="panel-allocation">
-        <Allocation />
+        <AllocationPanel />
       </div>
       <div className="panel-balance">
-        <Performance />
+        <PerformancePanel />
       </div>
       <div className="panel-positions">
-        <Positions />
+        <PositionsPanel />
       </div>
     </div>
   )

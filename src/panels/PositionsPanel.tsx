@@ -1,11 +1,13 @@
 import React from "react";
-import { Grid, GridColumn } from "@progress/kendo-react-grid";
+import { Grid, GridCellProps, GridColumn } from "@progress/kendo-react-grid";
 
 import { getPositions } from "../services/dataService";
 import Loading from "../layout/Loading";
+import { Position } from "../data/models";
 
-const NumberCell = (props) => {
-  const startingValue = props.dataItem[props.field];
+const NumberCell = (props: GridCellProps) => {
+  const field = props.field || "";
+  const startingValue = props.dataItem[field];
   let finalValue;
 
   if (startingValue > 1000000) {
@@ -18,8 +20,9 @@ const NumberCell = (props) => {
   return <td>{finalValue}</td>
 }
 
-const ChangeCell = (props) => {
-  const value = props.dataItem[props.field];
+const ChangeCell = (props: GridCellProps) => {
+  const field = props.field || "";
+  const value = props.dataItem[field];
   return (
     <td className={value > 0 ? "change-up" : "change-down"}>
       {value}%
@@ -27,11 +30,11 @@ const ChangeCell = (props) => {
   );
 }
 
-export default function Positions() {
-  const [positions, setPositions] = React.useState();
+export default function PositionsPanel() {
+  const [positions, setPositions] = React.useState<Position[]>();
 
   React.useEffect(() => {
-    getPositions().then((data) => {
+    getPositions().then((data: Position[]) => {
       setPositions(data);
     });
   }, []);

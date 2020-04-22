@@ -11,17 +11,18 @@ import {
 
 import { getFundAllocation } from "../services/dataService";
 import Loading from "../layout/Loading";
+import { Allocation } from "../data/models";
 
-const labelContent = (e) => (`${e.value}%`);
+const labelContent = (e: any) => (`${e.value}%`);
 
-const renderTooltip = (e) => {
+const renderTooltip = (e: any) => {
   return <div>{e.point ? e.point.category : ""}</div>;
 };
 
-export default function Allocation() {
-  const [data, setData] = React.useState();
+export default function AllocationPanel() {
+  const [data, setData] = React.useState<Allocation[]>();
   React.useEffect(() => {
-    getFundAllocation().then((data) => {
+    getFundAllocation().then((data: Allocation[]) => {
       setData(data);
     })
   }, []);

@@ -6,13 +6,13 @@ import {
   ChartCategoryAxis,
   ChartCategoryAxisItem,
   ChartTitle,
-  ChartTooltip
+  ChartTooltip,
 } from "@progress/kendo-react-charts";
 
 import { getPerformance } from "../services/dataService";
 import Loading from "../layout/Loading";
 
-const renderTooltip = (e) => {
+const renderTooltip = (e: any) => {
   return (
     <div>
       {e.point ?
@@ -21,10 +21,10 @@ const renderTooltip = (e) => {
   );
 };
 
-export default function Performance() {
-  const [data, setData] = React.useState();
+export default function PerformancePanel() {
+  const [data, setData] = React.useState<string[]>();
   React.useEffect(() => {
-    getPerformance().then(results => {
+    getPerformance().then((results: string[]) => {
       setData(results);
     })
   }, []);

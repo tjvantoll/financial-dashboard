@@ -3,11 +3,12 @@ import { PanelBar, PanelBarItem } from "@progress/kendo-react-layout";
 
 import { getFundInfo } from "../services/dataService";
 import Loading from "../layout/Loading";
+import { FundInfo } from "../data/models";
 
-export default function Info() {
-  const [fundInfo, setFundInfo] = React.useState();
+export default function InfoPanel() {
+  const [fundInfo, setFundInfo] = React.useState<FundInfo>();
   React.useEffect(() => {
-    getFundInfo().then((data) => {
+    getFundInfo().then((data: FundInfo) => {
       setFundInfo(data);
     });
   }, []);

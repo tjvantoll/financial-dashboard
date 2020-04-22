@@ -2,6 +2,7 @@ import React from "react";
 
 import { Button } from "@progress/kendo-react-buttons";
 import { Drawer, DrawerContent } from "@progress/kendo-react-layout";
+import { DrawerSelectEvent } from "@progress/kendo-react-layout/dist/npm/drawer/interfaces/DrawerSelectEvent";
 
 const user = {
   initials: "TV",
@@ -9,19 +10,19 @@ const user = {
   img: "https://pbs.twimg.com/profile_images/1029805644310827008/wkAPO_XC_400x400.jpg"
 };
 
-const items = [
-  { text: "Tech Fund", icon: "k-i-globe", route: "/" },
-  { text: "Health Fund", icon: "k-i-heart", route: "/" },
-  { text: "Commercial Fund", icon: 'k-i-cart', route: '/' },
-  { text: "Industrial Fund", icon: 'k-i-gear', route: '/' },
-  { text: "Financial Fund", icon: 'k-i-dollar', route: '/' },
+const items =[
+  { text: "Tech Fund", icon: "k-i-globe", children: null },
+  { text: "Health Fund", icon: "k-i-heart", children: null },
+  { text: "Commercial Fund", icon: 'k-i-cart', children: null },
+  { text: "Industrial Fund", icon: 'k-i-gear', children: null },
+  { text: "Financial Fund", icon: 'k-i-dollar', children: null },
 ];
 
-export default function DrawerContainer(props) {
+export default function DrawerContainer(props: React.PropsWithChildren<any>) {
   const [expanded, setExpanded] = React.useState(false);
   const [selectedId, setSelectedId] = React.useState(0);
 
-  const onSelect = (e) => {
+  const onSelect = (e: DrawerSelectEvent) => {
     setSelectedId(e.itemIndex);
     setExpanded(false);
   }
