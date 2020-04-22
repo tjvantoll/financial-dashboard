@@ -1,0 +1,67 @@
+h1 {
+  font-family: Ubuntu;
+  background: url("/header.svg") no-repeat;
+  background-size: cover;
+  color: white;
+  margin: 0;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+h1 img {
+  align-self: flex-end;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+h1 span {
+  align-self: center;
+}
+.title {
+  margin: 0 15px;
+}
+.title span {
+  display: inline-block;
+  padding-left: 10px;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+.k-button {
+  align-self: center;
+}
+.k-icon.k-i-menu {
+  font-size: 20px;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    padding: 1rem;
+    font-size: 2rem;
+  }
+  .k-icon.k-i-menu {
+    font-size: 20px;
+  }
+  h1 img {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  .title span {
+    font-size: 1rem;
+  }
+}
+
+.k-drawer-item .k-item-text {
+  align-self: center;
+}
+.k-drawer-item span.k-icon {
+  font-size: 30px;
+}

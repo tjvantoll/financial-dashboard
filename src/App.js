@@ -4,8 +4,7 @@ import "hammerjs";
 import DrawerContainer from "./layout/DrawerContainer";
 import Dashboard from "./Dashboard";
 
-import "@progress/kendo-theme-material/dist/all.css";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (

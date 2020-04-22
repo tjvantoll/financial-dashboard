@@ -1,0 +1,18 @@
+@import "~@progress/kendo-theme-material/dist/all.scss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.page-container {
+  margin: 1rem;
+}
+
+@import "styles/header";
+@import "styles/layout";
+@import "styles/panels";
