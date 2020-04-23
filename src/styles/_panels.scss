@@ -1,7 +1,4 @@
-.k-panelbar > .k-item > .k-link.k-state-selected,
-.k-panelbar .k-group > .k-item > .k-link.k-state-selected {
-  color: inherit;
-}
+
 .manager h2 {
   font-size: 1rem;
   font-weight: normal;
@@ -50,4 +47,12 @@
   width: 100%;
   margin-top: 1rem;
   height: 100%;
+}
+
+
+.k-grid {
+  font-size: 0.9rem;
+}
+.k-grid td, .k-grid-header .k-header > .k-link {
+  text-overflow: initial;
 }

@@ -1,4 +1,6 @@
-@import "~@progress/kendo-theme-material/dist/all.scss";
+// Customize any SASS variables here
+@import "~@progress/kendo-theme-bootstrap/dist/all.scss";
+@import "~bootstrap/scss/bootstrap.scss";
 
 html, body {
   margin: 0;
