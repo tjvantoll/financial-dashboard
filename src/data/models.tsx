@@ -1,5 +1,3 @@
-import { TooltipPoint } from "@progress/kendo-react-charts";
-
 export interface FundInfo {
   managers: [{
     firstName: string,
