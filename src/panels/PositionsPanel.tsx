@@ -4,6 +4,13 @@ import { getPositions } from "../services/dataService";
 import { Position } from "../data/models";
 
 export default function PositionsPanel() {
+  const [positions, setPositions] = React.useState<Position[]>();
+  React.useEffect(() => {
+    getPositions().then((data: Position[]) => {
+      setPositions(data);
+    });
+  }, []);
+
   return (
     <h2>Positions Panel</h2>
   );
