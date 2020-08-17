@@ -4,7 +4,7 @@ export function getFundInfo(): Promise<any> {
 }
 
 export function getFundAllocation(): Promise<any> {
-  return fetch("https://demoapis.com/sample/finance/allocation")
+  return fetch("https://demoapis.com/sample/finance/allocation?counter=5")
     .then(response => response.json());
 }
 

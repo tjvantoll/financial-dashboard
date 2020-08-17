@@ -22,6 +22,8 @@
     "@types/node": "^13.13.2",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
+    "@types/react-router": "^5.1.8",
+    "@types/react-router-dom": "^5.1.5",
     "bootstrap": "^4.4.1",
     "hammerjs": "^2.0.8",
     "node-sass": "^4.14.1",

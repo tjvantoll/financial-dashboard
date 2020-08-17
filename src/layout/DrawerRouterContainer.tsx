@@ -1,4 +1,6 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+import { useHistory } from "react-router";
 
 import { Button } from "@progress/kendo-react-buttons";
 import { Drawer, DrawerContent } from "@progress/kendo-react-layout";
@@ -10,21 +12,21 @@ const user = {
   img: "https://pbs.twimg.com/profile_images/1029805644310827008/wkAPO_XC_400x400.jpg"
 };
 
-const items =[
-  { text: "Tech Fund", icon: "k-i-globe", children: null },
-  { text: "Health Fund", icon: "k-i-heart", children: null },
-  { text: "Commercial Fund", icon: 'k-i-cart', children: null },
-  { text: "Industrial Fund", icon: 'k-i-gear', children: null },
-  { text: "Financial Fund", icon: 'k-i-dollar', children: null },
+const items = [
+  { text: "Home", icon: "k-i-home", route: "/", children: null },
+  { text: "Tech Fund", icon: "k-i-dollar", route: "/tech-fund", children: null }
 ];
 
-export default function DrawerContainer(props: React.PropsWithChildren<any>) {
+const DrawerRouterContainer = (props: React.PropsWithChildren<any>) => {
+  const history = useHistory();
   const [expanded, setExpanded] = React.useState(false);
   const [selectedId, setSelectedId] = React.useState(0);
 
   const onSelect = (e: DrawerSelectEvent) => {
     setSelectedId(e.itemIndex);
     setExpanded(false);
+    history.push(e.itemTarget.props.route);
+    // this.props.history.push(e.itemTarget.props.route);
   }
   const closeDrawer = () => {
     setExpanded(false);
@@ -54,7 +56,7 @@ export default function DrawerContainer(props: React.PropsWithChildren<any>) {
                 <span className="title">
                   ACME Stocks
                   <span className="divider">|</span>
-                  <span className="fund">Tech Fund</span>
+                  <span className="fund">{items[selectedId].text}</span>
                 </span>
               </span>
               <img alt={user.name} src={user.img} />
@@ -66,3 +68,5 @@ export default function DrawerContainer(props: React.PropsWithChildren<any>) {
     </div>
   );
 }
+
+export default withRouter(DrawerRouterContainer);
