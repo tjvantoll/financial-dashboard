@@ -21,8 +21,11 @@ export default function InfoPanel() {
           <div>
             {fundInfo && fundInfo.managers.map((item, idx) => (
               <div className="manager" key={idx}>
-                <img src={`/team/${item.firstName}${item.lastName}.png`}
-                  alt={item.firstName + ' ' + item.lastName} />
+                <picture>
+                  <source type="image/webp" srcSet={`/team/${item.firstName}${item.lastName}.webp`}/>
+                  <img src={`/team/${item.firstName}${item.lastName}.png`} alt={item.firstName + ' ' + item.lastName} />
+                </picture>
+
                 <span className="manager-info">
                   <h2>{item.firstName + ' ' + item.lastName}</h2>
                   <p>{item.position}</p>

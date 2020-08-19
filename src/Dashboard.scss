@@ -1,0 +1,9 @@
+// Customize any SASS variables here
+// @import "~@progress/kendo-theme-bootstrap/dist/all.scss";
+
+@import "~@progress/kendo-theme-bootstrap/scss/grid/_index.scss";
+@import "~@progress/kendo-theme-bootstrap/scss/panelbar/_index.scss";
+@import "~@progress/kendo-theme-bootstrap/scss/dataviz/_index.scss";
+
+@import "styles/layout";
+@import "styles/panels";

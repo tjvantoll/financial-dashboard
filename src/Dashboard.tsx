@@ -5,6 +5,8 @@ import AllocationPanel from "./panels/AllocationPanel";
 import PerformancePanel from "./panels/PerformancePanel";
 import PositionsPanel from "./panels/PositionsPanel";
 
+import "./Dashboard.scss";
+
 export default function Dashboard() {
   return (
     <div className="panels">

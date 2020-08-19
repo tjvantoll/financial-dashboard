@@ -1,15 +1,18 @@
-import React from "react";
+import React, { Suspense } from "react";
 import "hammerjs";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.scss";
 
 import DrawerRouterContainer from "./layout/DrawerRouterContainer";
-import Dashboard from "./Dashboard";
-import Home from "./Home";
 
-import "./App.scss";
+import Loading from "./layout/Loading";
+const Home = React.lazy(() => import ("./Home"));
+const Dashboard = React.lazy(() => import ("./Dashboard"));
+
 
 function App() {
   return (
+    <Suspense fallback={<Loading />}>
     <Router>
       <DrawerRouterContainer>
         <div className="page-container">
@@ -24,6 +27,7 @@ function App() {
         </div>
       </DrawerRouterContainer>
     </Router>
+    </Suspense>
   );
 }
 

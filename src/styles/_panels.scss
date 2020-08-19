@@ -1,5 +1,8 @@
 .manager {
-  text-shadow: 2px 2px 0px pink;
+  display: grid;
+  grid-template-columns: [photo] 70px [details] auto;
+
+  text-shadow: 4px 4px 4px #A8ABB3;
 }
 
 .manager h2 {
@@ -13,17 +16,16 @@
   font-size: 0.75rem;
 }
 .manager img {
-  display: inline-block;
+  grid-column: photo;
   vertical-align: top;
   width: 50px;
   height: 50px;
   margin: 10px;
   border-radius: 50%;
-  box-shadow: 0px 0px 0px 5px pink;
+  box-shadow: 6px 6px 15px 2px #939194;
 }
 .manager-info {
-  grid-row: 1;
-  display: inline-block;
+  grid-column: details;
 }
 .fund-detail-list {
   font-size: 0.9rem;

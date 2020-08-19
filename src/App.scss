@@ -1,5 +1,7 @@
 // Customize any SASS variables here
-@import "~@progress/kendo-theme-bootstrap/dist/all.scss";
+// @import "~@progress/kendo-theme-bootstrap/dist/all.scss";
+@import "~@progress/kendo-theme-bootstrap/scss/drawer/_index.scss";
+
 @import "~bootstrap/scss/bootstrap.scss";
 
 html, body {
@@ -16,5 +18,5 @@ body {
 }
 
 @import "styles/header";
-@import "styles/layout";
-@import "styles/panels";
+// @import "styles/layout";
+// @import "styles/panels";
